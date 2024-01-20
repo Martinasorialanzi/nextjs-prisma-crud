@@ -9,7 +9,6 @@ const NewPage = ({params}) => {
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
 
-
   useEffect(() => {
     if (params.id){
       fetch(`/api/tasks/${params.id}`)
@@ -30,15 +29,16 @@ const NewPage = ({params}) => {
 
 
       if(params.id){
-        const res=await fetch(`api/tasks/${params.id}`,{
-          method:"PUT",
+        const res = await fetch(`/api/tasks/${params.id}`, {
+          method: "PUT",
           body: JSON.stringify({title, description }),
           headers: {
             "Content-Type": "application/json", //esto tiene que ir si o si para que el backend lo entienda como json
           },
         });
         const data = await res.json();
-        console.log(data)
+        
+    
       } else {
         const res = await fetch(`/api/tasks`, {
           method: "POST",
@@ -48,6 +48,7 @@ const NewPage = ({params}) => {
           },
         });
         const data = await res.json();
+        
       }
     
   

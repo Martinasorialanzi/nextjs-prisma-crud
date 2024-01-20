@@ -10,7 +10,7 @@ const TaskCards = ({task}) => {
     >
     <h3 className="font-bold text-2xl mb-2">{task.title}</h3>
     <p>{task.description}</p>
-    <p>{new Date(task.createdAt).toLocaleDateString()}</p>
+    {/* <p>{new Date(task.createdAt).toLocaleDateString()}</p> */}
     </div>
   )
 }

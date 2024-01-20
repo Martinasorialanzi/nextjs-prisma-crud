@@ -1,5 +1,4 @@
 import { prisma } from "@/libs/prisma";
-import next from "next";
 import { NextResponse } from "next/server";
 
 export async function GET(request, {params}){
@@ -9,7 +8,7 @@ export async function GET(request, {params}){
             id:Number(params.id)
         }
     })
-    console.log(task)
+    // console.log(task)
     return NextResponse.json(task)
 }
 
@@ -31,7 +30,7 @@ export async function DELETE(request, {params}){
                 id:Number(params.id)
             }
         })
-        console.log(taskRemoved)
+        // console.log(taskRemoved)
         return NextResponse.json(taskRemoved)
     } catch (error) {
         return NextResponse.json(error.message)

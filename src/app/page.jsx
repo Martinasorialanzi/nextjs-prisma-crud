@@ -1,5 +1,5 @@
 import { prisma } from "@/libs/prisma";
-import React from "react";
+
 import TaskCards from "../components/TaskCards";
 
 const loadTask = async () => {
@@ -21,7 +21,7 @@ const HomePage = async() => {
   const tasks= await loadTask()
   
   return (
-    <>
+    
     <section className="container mx-auto">
     <div  className="grid grid-cols-3 gap-3 mt-10">
       {tasks.map((task)=>(
@@ -32,7 +32,7 @@ const HomePage = async() => {
       )}
       </div>
       </section>
-    </>
+    
   );
 };
 
